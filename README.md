@@ -60,7 +60,7 @@ Whether you can drop additional modules into the module. No effect for content m
 
 Which way the content of the content block should be interpretated.
 
-- text (default) (Converts new lines to <br>)
+- text (default) (Converts new lines to `<br>`)
 - markdown (Compiles content via markdown)
 - code (Raw content allowed including HTML and JS)
 
