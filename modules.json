@@ -1,0 +1,173 @@
+{
+	"modules": [
+	{
+		"name": 	"Heading 1",
+		"ref": 		"h1",
+		"type": 	"content",
+		"before":	"<h1>",
+		"after":	"</h1>",
+		"width":	"12"
+	},
+	{
+		"name": 	"Heading 2",
+		"ref": 		"h2",
+		"type": 	"content",
+		"before":	"<h2>",
+		"after":	"</h2>",
+		"width":	"12"
+	},
+	{
+		"name": 	"Paragraph",
+		"ref": 		"p",
+		"type": 	"content",
+		"before":	"<p>",
+		"after":	"</p>",
+		"width":	"12"
+	},
+	{
+		"name":		"Image",
+		"ref":		"img",
+		"type":		"content",
+		"before":	"<img style=\"max-width: 100%; padding: 2em;\" src=\"",
+		"after":	"\" />",
+		"width":	"12"
+	},
+	{
+		"name": 	"Markdown",
+		"desc":		"A block of HTML compiled from <a href=\"http://daringfireball.net/projects/markdown/syntax\">Markdown</a>",
+		"ref": 		"md",
+		"type": 	"content",
+		"before":	"",
+		"after":	"",
+		"width":	"12",
+		"mode":		"markdown"
+	},
+	{
+		"name":		"HTML",
+		"desc":		"Raw HTML",
+		"ref":		"html",
+		"type":		"content",
+		"before":	"",
+		"after":	"",
+		"width":	"12",
+		"mode":		"code"
+	},
+	{
+		"name":		"Target",
+		"ref":		"a_open",
+		"type":		"content",
+		"before":	"<a href=\"",
+		"after":	"\">",
+		"width":	"12",
+		"private":	"true",
+		"locked":	"true"
+	},
+	{
+		"name":		"Link Content",
+		"ref":		"a_close",
+		"type":		"container",
+		"before":	"",
+		"after":	"</a>",
+		"width":	"12",
+		"private":	"true"
+	},
+	{
+		"name":		"Column",
+		"ref":		"col12",
+		"type":		"container",
+		"before":	"<div class=\"fifteen columns\">",
+		"after":	"</div>",
+		"width":	"12",
+		"private":	"true"
+	},
+	{
+		"name":		"Column",
+		"ref":		"col6",
+		"type":		"container",
+		"before":	"<div class=\"seven columns\">",
+		"after":	"</div>",
+		"width":	"6",
+		"private":	"true"
+	},
+	{
+		"name":		"Column",
+		"ref":		"col4",
+		"type":		"container",
+		"before":	"<div class=\"five columns\">",
+		"after":	"</div>",
+		"width":	"4",
+		"private":	"true"
+	}],
+	"groups": [
+	{
+		"name":		"One Column",
+		"desc":		"A row containing a column",
+		"ref":		"1col",
+		"type":		"container",
+		"before":	"<div class=\"row clearfix\">",
+		"after":	"</div>",
+		"width":	"12",
+		"locked":	"true",
+		"content": [{
+			"ref":		"col12",
+			"content": 	[{}]
+		}]
+	},
+	{
+		"name":		"Two Columns",
+		"desc":		"A row containing two columns",
+		"ref":		"2col",
+		"type":		"container",
+		"before":	"<div class=\"row clearfix\">",
+		"after":	"</div>",
+		"width":	"12",
+		"locked":	"true",
+		"content": [{
+			"ref":		"col6",
+			"content": 	[{}]
+		},
+		{
+			"ref":		"col6",
+			"content": 	[{}]
+		}]
+	},
+	{
+		"name":		"Three Columns",
+		"desc":		"A row containing three columns",
+		"ref":		"3col",
+		"type":		"container",
+		"before":	"<div class=\"row clearfix\">",
+		"after":	"</div>",
+		"width":	"12",
+		"locked":	"true",
+		"content": [{
+			"ref":		"col4",
+			"content": 	[{}]
+		},
+		{
+			"ref":		"col4",
+			"content": 	[{}]
+		},
+		{
+			"ref":		"col4",
+			"content": 	[{}]
+		}]
+	},
+	{
+		"name":		"Link",
+		"ref":		"a",
+		"type":		"container",
+		"before":	"",
+		"after":	"",
+		"width":	"12",
+		"locked":	"true",
+		"content":	[{
+			"ref":		"a_open",
+			"content": 	"http://"
+		},
+		{
+			"ref":		"a_close",
+			"content": 	[{}]
+		}]
+	}]
+}

@@ -1,0 +1,204 @@
+#pbAdmin>.layout, #pbModules>.layout {
+	border: 0 !important;
+	margin-top: 20px;
+}
+
+#pbLayout {
+	width: 80%;
+	float: right;
+	.desc {
+		display: none;
+	}
+}
+
+.pbPlaceholder {
+	background-color: $placeholderFill !important;
+	border: 2px dotted $placeholderBorder !important;
+	width: 98%;
+	margin: 1% !important;
+	height: 100px;
+	display: block;
+	box-shadow: none !important;
+	.desc {
+		display: none;
+	}
+}
+
+.layout {
+	min-height: 100px;
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border: 1px dotted $layoutBorder;
+	// border-radius: 5px;
+	&.layout-locked:not(.layout-modules) {
+		border: 0;
+		&>li {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+		}
+	}
+	li:not(.parentContainer) {
+		position: relative;
+		float: left;
+		border: 2px solid $moduleBorder;
+		// border-radius: 5px;
+		background-color: $moduleFill;
+		box-shadow: 0 5px 10px $shadow;
+		margin-bottom: 25px;
+		margin-top: 25px;
+		transition: box-shadow 0.25s;
+		transition: border 0.2s;
+		&:hover {
+			border: 2px solid lighten($moduleBorder, 5%);
+			>.handle {
+				background-color: lighten($moduleBorder, 5%);
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 50px;
+			margin-right: 0 !important;
+		}
+		&:first-child {
+			margin-top: 50px;
+		}
+
+		&.active {
+			box-shadow: 0 25px 10px $shadow;
+		}
+
+		&[w="12"] {
+			width: 98%;
+			margin: 1%;
+		}
+		&[w="8"] {
+			margin-top: 50px;
+			width: 65%;
+			float: left;
+			margin-right: 1%;
+		}
+		&[w="6"] {
+			margin-top: 50px;
+			width: 49%;
+			margin-right: 1%;
+			float: left;
+		}
+		&[w="4"] {
+			margin-top: 50px;
+			width: 32%;
+			float: left;
+			margin-right: 1%;
+		}
+		&[w="3"] {
+			margin-top: 50px;
+			width: 24%;
+			float: left;
+			margin-right: 1%;
+		}
+
+		&[private="false"] {
+			&[type="content"] {
+				>.handle {
+					&:before {
+						@extend .icon-pencil;
+						top: 5px;
+					}
+				}
+			}
+			&[type="container"] {
+				>.handle {
+					&:before {
+						@extend .icon-folder;
+					}
+				}
+			}
+		}
+
+		.handle {
+			transition: background-color 0.2s;
+			padding-top: 5px;
+			text-align: center;
+			color: $handle;
+			display: block;
+			width: 100%;
+			height: 30px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $moduleBorder;
+			cursor: move;
+			font-weight: 400;
+
+			&:before {
+				font-family: 'icomoon';
+				position: absolute;
+				left: 8px;
+				top: 5px;
+			}
+
+			.controls {
+				position: absolute;
+				top: 5px;
+				right: 8px;
+
+				.imgControl {
+					cursor: pointer;
+					transition: color 0.3s;
+					position: relative;
+					top: -3px;
+					margin-right: 5px;
+					&:hover {
+						color: yellow;
+					}
+				}
+
+				.close {
+					font-size: 24px;
+					cursor: pointer;
+					transition: color 0.3s;
+					&:hover {
+						color: red;
+					}
+				}
+			}
+
+			&.handle-disabled {
+				cursor: default;
+				color: $handleDisabled;
+				.controls {
+					display: none;
+				}
+			}
+		}
+
+		.content {
+			padding: 10px;
+			margin-top: 35px;
+			text-align: center;
+			>*:first-child {
+				margin-top: 0;
+			}
+		}
+
+		textarea {
+			width: 100%;
+			max-width: 100%;
+			&.pbmode-markdown {
+				font-family: monospace;
+				color: #333;
+			}
+			&.pbmode-code {
+				font-family: monospace;
+				color: #bbb;
+				background-color: #333;
+			}
+		}
+	}
+	.parentContainer {
+		.handle {
+			display: none;
+		}
+	}
+}

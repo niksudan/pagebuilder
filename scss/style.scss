@@ -1,0 +1,25 @@
+// PageBuilder Styles
+
+// Layout
+$layoutBorder: #aaa;
+
+// Placeholder
+$placeholderFill: rgba(#0073aa, 0.1);
+$placeholderBorder: #0073aa;
+
+// Modules
+$moduleBorder: lighten(#23282d, 10%);
+$moduleFill: #eee;
+
+// Module shadow
+$shadow: rgba(black, 0.25);
+
+// Handle text
+$handle: #eee;
+$handleDisabled: #eee;
+
+@import 'clearfix';
+@import 'icons';
+@import 'modules';
+@import 'layouts';
+@import 'preview';
